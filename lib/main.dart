@@ -47,18 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _showAllProducts() {
-
-  }
-
-  void _showUserProducts() {
-
-  }
-
-  void _createProduct() {
-
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,28 +61,46 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: _showAllProducts,
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: const Text('Kamu telah menekan tombol All Products'),
+                  ),
+                );
+              },
               child: const Text('All Products'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 foregroundColor: Colors.white,
-              )
+              ),
             ),
             ElevatedButton(
-              onPressed: _showUserProducts,
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: const Text('Kamu telah menekan tombol My Products'),
+                  ),
+                );
+              },
               child: const Text('My Products'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
                 foregroundColor: Colors.white,
-              )
+              ),
             ),
             ElevatedButton(
-              onPressed: _createProduct,
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: const Text('Kamu telah menekan tombol Create Product'),
+                  ),
+                );
+              },
               child: const Text('Create Product'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
                 foregroundColor: Colors.white,
-              )
+              ),
             ),
           ],
         ),
