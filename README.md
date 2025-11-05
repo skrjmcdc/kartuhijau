@@ -9,6 +9,7 @@
 ## Apa itu widget tree?
 
 Widget tree merupakan representasi logical dari setiap widget dalam user interface.
+Dalam Flutter, children dari suatu widget yaitu widget-widget yang muncul dalam method `build` widget tersebut. Widget parent bertugas mengatur layout dan positioning setiap anaknya.
 
 ## Penjelasan widget dalam proyek ini
 - **`MyApp` (subclass `StatelessWidget`):** Root widget dari aplikasi Kartuhijau.
@@ -22,7 +23,6 @@ Widget tree merupakan representasi logical dari setiap widget dalam user interfa
 - **`SnackBar`:** Widget ini merepresentasikan sejenis pesan *toast* yang akan muncul di bagian bawah layar.
 
 ## Fungsi widget `MaterialApp`
-
 
 ## `StatelessWidget` vs. `StatefulWidget`
 
