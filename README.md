@@ -1,7 +1,7 @@
 # Kartuhijau
 
-**Nama:** Muhammad Ibaadi Ilmi
-**NPM:** 2406357684
+**Nama:** Muhammad Ibaadi Ilmi  
+**NPM:** 2406357684  
 **Kelas:** PBP A
 
 # Tugas 6
