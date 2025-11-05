@@ -1,16 +1,19 @@
-# kartuhijau
+# Kartuhijau
 
-A new Flutter project.
+**Nama:** Muhammad Ibaadi Ilmi
+**NPM:** 2406357684
+**Kelas:** PBP A
 
-## Getting Started
+# Tugas 6
 
-This project is a starting point for a Flutter application.
+## Apa itu widget tree?
 
-A few resources to get you started if this is your first Flutter project:
+## Penjelasan widget dalam proyek ini
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Fungsi widget `MaterialApp`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## `StatelessWidget` vs. `StatefulWidget`
+
+## Apa itu `BuildContext`?
+
+## *Hot reload* vs. *hot restart*
