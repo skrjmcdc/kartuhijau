@@ -52,6 +52,11 @@ class _ProductFormPageState extends State<ProductFormPage> {
                 hintText: "Enter the product name...",
                 labelText: "Product Name",
               ),
+              onChanged: (String value) {
+                setState(() {
+                  _name = value;
+                });
+              },
               validator: (String? value) {
                 if (value == null || value.isEmpty) {
                   return "Product name cannot be blank.";
@@ -69,6 +74,11 @@ class _ProductFormPageState extends State<ProductFormPage> {
                 hintText: "Enter the product price...",
                 labelText: "Product Price",
               ),
+              onChanged: (String value) {
+                setState(() {
+                  _price = int.tryParse(value) ?? 0;
+                });
+              },
               validator: (String? value) {
                 if (value == null || value.isEmpty) {
                   return "Product price cannot be blank.";
@@ -91,6 +101,11 @@ class _ProductFormPageState extends State<ProductFormPage> {
                 hintText: "Enter the product description...",
                 labelText: "Product Description",
               ),
+              onChanged: (String value) {
+                setState(() {
+                  _description = value;
+                });
+              },
               validator: (String? value) {
                 if (value == null || value.isEmpty) {
                   return "Product description cannot be blank.";
@@ -104,6 +119,11 @@ class _ProductFormPageState extends State<ProductFormPage> {
                 hintText: "Enter the thumbnail link...",
                 labelText: "Thumbnail",
               ),
+              onChanged: (String value) {
+                setState(() {
+                  _thumbnail = value;
+                });
+              },
               validator: (String? value) {
                 if (value == null) {
                   return "Thumbnail link cannot be null.";
@@ -123,7 +143,11 @@ class _ProductFormPageState extends State<ProductFormPage> {
                         child: Text(cat.$2),
                       ))
                   .toList(),
-              onChanged: (String? value) {},
+              onChanged: (String? value) {
+                setState(() {
+                  _category = value!;
+                });
+              },
             ),
             // === Is Featured ===
             SwitchListTile(
@@ -143,7 +167,30 @@ class _ProductFormPageState extends State<ProductFormPage> {
                 ),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    _formKey.currentState!.reset();
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        String categoryReadable = _categories
+                            .firstWhere((cat) => (cat.$1 == _category), orElse: () => ('misc', "Miscellaneous"))
+                            .$2;
+                        return AlertDialog(
+                          title: const Text('Successfully created product.'),
+                          content: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Text('Name: $_name'),
+                                Text('Price: $_price'),
+                                Text('Description: $_description'),
+                                Text('Thumbnail: $_thumbnail'),
+                                Text('Category: $categoryReadable'),
+                                Text('Featured: ${_isFeatured ? "Yes" : "No"}'),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                    // _formKey.currentState!.reset();
                   }
                 },
                 child: const Text(
