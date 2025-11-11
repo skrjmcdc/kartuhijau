@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kartuhijau/widgets/left_drawer.dart';
 
 class ProductFormPage extends StatefulWidget {
 
@@ -40,6 +41,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
         backgroundColor: Colors.green,
         foregroundColor: Colors.white,
       ),
+      drawer: LeftDrawer(),
       body: Form(
         key: _formKey,
         child: ListView(
