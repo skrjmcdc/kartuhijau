@@ -21,12 +21,12 @@ class _ProductFormPageState extends State<ProductFormPage> {
   String _category = "misc";
   bool _isFeatured = false;
 
-  final List<String> _categories = [
-    'consumable',
-    'equipment',
-    'tool',
-    'treasure',
-    'misc',
+  final List<(String, String)> _categories = [
+    ('consumable', "Consumables"),
+    ('equipment', "Equipments"),
+    ('tool', "Tools"),
+    ('treasure', "Artifacts"),
+    ('misc', "Miscellaneous"),
   ];
 
   @override
@@ -55,6 +55,9 @@ class _ProductFormPageState extends State<ProductFormPage> {
               validator: (String? value) {
                 if (value == null || value.isEmpty) {
                   return "Product name cannot be blank.";
+                }
+                if (value!.length > 255) {
+                  return "Product name is too long.";
                 }
                 return null;
               },
@@ -93,6 +96,43 @@ class _ProductFormPageState extends State<ProductFormPage> {
                   return "Product description cannot be blank.";
                 }
                 return null;
+              },
+            ),
+            // === Thumbnail ===
+            TextFormField(
+              decoration: InputDecoration(
+                hintText: "Enter the thumbnail link...",
+                labelText: "Thumbnail",
+              ),
+              validator: (String? value) {
+                if (value == null) {
+                  return "Thumbnail link cannot be null.";
+                }
+                return null;
+              },
+            ),
+            // === Category ===
+            DropdownButtonFormField<String>(
+              decoration: InputDecoration(
+                labelText: "Category",
+              ),
+              value: _category,
+              items: _categories
+                  .map((cat) => DropdownMenuItem(
+                        value: cat.$1,
+                        child: Text(cat.$2),
+                      ))
+                  .toList(),
+              onChanged: (String? value) {},
+            ),
+            // === Is Featured ===
+            SwitchListTile(
+              title: const Text("Featured product?"),
+              value: _isFeatured,
+              onChanged: (bool value) {
+                setState(() {
+                  _isFeatured = value;
+                });
               },
             ),
             // === Save Button ===
