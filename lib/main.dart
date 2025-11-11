@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kartuhijau/screens/product_form.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,10 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        backgroundColor: Colors.green,
+        foregroundColor: Colors.white,
       ),
       body: Center(
         child: Column(
@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
                 foregroundColor: Colors.white,
-              ),
+              ),  
             ),
             ElevatedButton(
               onPressed: () {
@@ -95,12 +95,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     content: const Text('Kamu telah menekan tombol Create Product'),
                   ),
                 );
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProductFormPage(),
+                    )
+                );
               },
-              child: const Text('Create Product'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
                 foregroundColor: Colors.white,
               ),
+              child: const Text('Create Product'),
             ),
           ],
         ),
