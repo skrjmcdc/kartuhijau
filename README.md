@@ -21,7 +21,7 @@ Berikut pemanfaatan hierarchy widget dalam aplikasi:
 
 ## Layout widget dalam form
 
-Kelebihan menggunakan layout widget saat menampilkan elemen-elemen form yaitu kita dapat mengatur penempatan setiap widget dalam form. Misalnya, saya menggunakan `ListView` sebagai container setiap widget field dalam form agar pengguna bisa men-scroll seluruh widget jika tidak muat di layar.
+Kelebihan menggunakan layout widget saat menampilkan elemen-elemen form yaitu kita dapat mengatur penempatan setiap widget dalam form. Sedangkan jika kita hanya menggunakan widget-widget form secara langsung, maka hasilnya akan terlihat jelek karena kita tidak bisa mengatur layout-nya. Misalnya, saya menggunakan `ListView` sebagai container setiap widget field dalam form agar pengguna bisa men-scroll seluruh widget jika tidak muat di layar.
 
 ## Warna tema
 
