@@ -4,6 +4,29 @@
 **NPM:** 2406357684  
 **Kelas:** PBP A
 
+# Tugas 7
+
+## `Navigator.push()` vs. `Navigator.pushReplacement()`
+
+Dalam Flutter, Navigator bekerja sebagai suatu stack, di mana halaman yang baru diakses akan di-push ke atas stack, sedangkan setiap pengguna meng-klik tombol untuk kembali ke halaman "sebelumnya", maka halaman teratas akan di-pop dari stack.
+
+Perbedaan `Navigator.push()` dengan `Navigator.pushReplacement()`, yaitu `push()` bekerja seperti operasi push pada umumnya, sehingga halaman yang baru diakses akan diletakkan di bagian atas stack. Sedangkan `pushReplacement()` justru *mengganti* halaman teratas di stack dengan halaman yang baru diakses, sehingga `pushReplacement()` seolah-olah mem-pop halaman teratas, baru mem-push halaman yang akan diakses.
+
+## Hierarchy widget
+
+Berikut pemanfaatan hierarchy widget dalam aplikasi:
+- `Scaffold`: Saya menggunakannya sebagai kerangka dasar untuk setiap halaman. Seluruh widget dalam setiap halaman akan termuat dalam widget ini. Selanjutnya saya tinggal menggunakannya sebagai widget dasar setiap halaman.
+- `AppBar`: Saya mengguunakannya untuk membuat header yang akan muncul di bagian atas setiap halaman. Selanjutnya saya tinggal menambahkan bar tersebut pada Scaffold masing-masing halaman.
+- `Drawer`: Saya menggunakannya untuk membuat elanjutnya saya tinggal menambahkan drawer tersebut tersebut pada Scaffold masing-masing halaman.
+
+## Layout widget dalam form
+
+Kelebihan menggunakan layout widget saat menampilkan elemen-elemen form yaitu kita dapat mengatur penempatan setiap widget dalam form. Misalnya, saya menggunakan `ListView` sebagai container setiap widget field dalam form agar pengguna bisa men-scroll seluruh widget jika tidak muat di layar.
+
+## Warna tema
+
+Sesuai dengan nama aplikasi, saya menggunakan warna tema hijau (`Colors.green`).
+
 # Tugas 6
 
 ## Apa itu widget tree?
