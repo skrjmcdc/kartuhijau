@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kartuhijau/screens/login.dart';
 import 'package:kartuhijau/screens/product_form.dart';
+import 'package:kartuhijau/screens/register.dart';
 import 'package:kartuhijau/widgets/left_drawer.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -20,17 +22,47 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    )
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                foregroundColor: Colors.white,
+              ),
+              child: const Text('Login'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RegisterPage(),
+                    )
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                foregroundColor: Colors.white,
+              ),
+              child: const Text('Register'),
+            ),
+            ElevatedButton(
+              onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: const Text('Kamu telah menekan tombol All Products'),
                   ),
                 );
               },
-              child: const Text('All Products'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: Colors.green,
                 foregroundColor: Colors.white,
               ),
+              child: const Text('All Products'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -40,11 +72,11 @@ class MyHomePage extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('My Products'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
                 foregroundColor: Colors.white,
-              ),  
+              ),
+              child: const Text('My Products'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -61,7 +93,7 @@ class MyHomePage extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red,
+                backgroundColor: Colors.green,
                 foregroundColor: Colors.white,
               ),
               child: const Text('Create Product'),
