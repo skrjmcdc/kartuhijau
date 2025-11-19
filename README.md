@@ -4,7 +4,7 @@
 **NPM:** 2406357684  
 **Kelas:** PBP A
 
-# Tugas 7
+# Tugas 8
 
 ## `Navigator.push()` vs. `Navigator.pushReplacement()`
 
@@ -27,7 +27,7 @@ Kelebihan menggunakan layout widget saat menampilkan elemen-elemen form yaitu ki
 
 Sesuai dengan nama aplikasi, saya menggunakan warna tema hijau (`Colors.green`).
 
-# Tugas 6
+# Tugas 7
 
 ## Apa itu widget tree?
 
