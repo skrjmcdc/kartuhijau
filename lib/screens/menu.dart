@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kartuhijau/screens/all_products.dart';
 import 'package:kartuhijau/screens/login.dart';
 import 'package:kartuhijau/screens/product_form.dart';
 import 'package:kartuhijau/screens/register.dart';
@@ -52,10 +53,18 @@ class MyHomePage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: const Text('Kamu telah menekan tombol All Products'),
-                  ),
+                ScaffoldMessenger.of(context)
+                  ..hideCurrentSnackBar()
+                  ..showSnackBar(
+                    SnackBar(
+                      content: const Text('Kamu telah menekan tombol All Products'),
+                    ),
+                  );
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProductListPage(),
+                    )
                 );
               },
               style: ElevatedButton.styleFrom(
@@ -66,10 +75,12 @@ class MyHomePage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: const Text('Kamu telah menekan tombol My Products'),
-                  ),
+                ScaffoldMessenger.of(context)
+                  ..hideCurrentSnackBar()
+                  ..showSnackBar(
+                    SnackBar(
+                      content: const Text('Kamu telah menekan tombol My Products'),
+                    ),
                 );
               },
               style: ElevatedButton.styleFrom(
@@ -80,10 +91,12 @@ class MyHomePage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: const Text('Kamu telah menekan tombol Create Product'),
-                  ),
+                ScaffoldMessenger.of(context)
+                  ..hideCurrentSnackBar()
+                  ..showSnackBar(
+                    SnackBar(
+                      content: const Text('Kamu telah menekan tombol Create Product'),
+                    ),
                 );
                 Navigator.push(
                     context,
