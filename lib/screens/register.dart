@@ -19,7 +19,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     final pdjau = context.watch<CookieRequest>();
     return Scaffold(
-        appBar:   AppBar(
+        appBar: AppBar(
           title: const Text('Register'),
         ),
         body: Center(
